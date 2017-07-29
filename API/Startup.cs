@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using AspNet.Security.OpenIdConnect.Extensions;
 using AspNet.Security.OpenIdConnect.Primitives;
 using BLL;
-using BE;
+using BE.AccountEntities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +41,7 @@ namespace API
         {
             // Add framework services.
             services.AddMvc();
-            services.AddTransient<IErrorLogger, EventLogger>();
+            services.AddTransient<IErrorLogger, ConsoleLogger>();
             services.AddTransient<IRepository<Account>, AccountRepository>();
             services.AddTransient<IComponent<Account>, AccountComponent>();
             services.AddCors(options =>

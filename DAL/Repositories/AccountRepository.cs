@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BE;
+using BE.AccountEntities;
 using MongoDB.Driver;
 
 namespace DAL.Repositories

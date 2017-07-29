@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using BLL;
+using DAL;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
@@ -11,7 +12,14 @@ namespace API.Controllers
     [EnableCors("AllowSpecificOrigin")]
     public abstract class BaseController<T> : Controller
     {
-        public IComponent<T> component;
+        protected readonly IComponent<T> component;
+        protected readonly IErrorLogger logger;
+
+        public BaseController(IComponent<T> component, IErrorLogger logger)
+        {
+            this.component = component;
+            this.logger = logger;
+        }
 
         // GET: api/values
         [HttpGet]

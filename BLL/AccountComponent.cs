@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BE;
+using BE.AccountEntities;
 using DAL;
 
 namespace BLL
@@ -13,10 +13,11 @@ namespace BLL
             this.repository = repository;
         }
 
-        public Account Login(Account account)
+        public Account Login(AccountLogin account)
         {
             var filters = new List<KeyValuePair<string, object>>();
-            filters.Add(new KeyValuePair<string, object>(account.Email, account.Password));
+            filters.Add(new KeyValuePair<string, object>("Email", account.Email));
+            filters.Add(new KeyValuePair<string, object>("Password", account.Password));
             
             var result = (this.repository).Get(filters).ToList().First();
 
