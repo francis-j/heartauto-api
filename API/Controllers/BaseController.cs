@@ -30,8 +30,15 @@ namespace API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IEnumerable<T> Get(IEnumerable<KeyValuePair<string, object>> filters)
+        public IEnumerable<T> Get(string id)
 		{
+            var objectId = new ObjectId(id);
+
+            var filters = new List<KeyValuePair<string, object>>() 
+            {
+                new KeyValuePair<string, object>("_id", objectId)
+            };
+
             return component.Get(filters);
         }
 

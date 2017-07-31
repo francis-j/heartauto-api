@@ -8,6 +8,7 @@ using AspNet.Security.OpenIdConnect.Extensions;
 using AspNet.Security.OpenIdConnect.Primitives;
 using BLL;
 using BE.AccountEntities;
+using BE;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -44,6 +45,8 @@ namespace API
             services.AddTransient<IErrorLogger, ConsoleLogger>();
             services.AddTransient<IRepository<Account>, AccountRepository>();
             services.AddTransient<IComponent<Account>, AccountComponent>();
+            services.AddTransient<IRepository<Site>, SiteRepository>();
+            services.AddTransient<IComponent<Site>, SiteComponent>();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",

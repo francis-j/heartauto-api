@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BE.AccountEntities;
+using BE;
 using MongoDB.Driver;
 
 namespace DAL.Repositories
 {
-    public class AccountRepository : MongoRepository<Account>
+    public class SiteRepository : MongoRepository<Site>
     {
-        public AccountRepository(IErrorLogger logger) : base(logger)
+        public SiteRepository(IErrorLogger logger) : base(logger)
         {
             
         }

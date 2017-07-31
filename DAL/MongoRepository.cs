@@ -8,7 +8,7 @@ using MongoDB.Driver;
 
 namespace DAL
 {
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class MongoRepository<T> : IRepository<T>
     {
         private readonly IErrorLogger logger;
 
@@ -16,7 +16,7 @@ namespace DAL
         private IMongoDatabase database;
         public IMongoCollection<T> collection;
 
-        public Repository(IErrorLogger logger)
+        public MongoRepository(IErrorLogger logger)
         {
             this.logger = logger;
 
@@ -27,31 +27,40 @@ namespace DAL
             this.collection = this.database.GetCollection<T>(typeof(T).Name);
         }
 
-        public IEnumerable<T> Get()
+        public IEnumerable<T> Read()
         {
             var items = this.collection.Find(new BsonDocument()).ToList();
 
             return items;
         }
 
-        public IEnumerable<T> Get(List<KeyValuePair<string, object>> filters)
+        public IEnumerable<T> Read(List<KeyValuePair<string, object>> filters)
         {
-            var definitions = new List<FilterDefinition<T>>();
-
-            foreach (var filter in filters)
+            try 
             {
-                var definition = Builders<T>.Filter.Eq(filter.Key, filter.Value);
-                definitions.Add(definition);
+                var definitions = new List<FilterDefinition<T>>();
+
+                foreach (var filter in filters)
+                {
+                    var definition = Builders<T>.Filter.Eq(filter.Key, filter.Value);
+                    definitions.Add(definition);
+                }
+
+                var masterFilter = Builders<T>.Filter.And(definitions);
+
+                var result = this.collection.Find(masterFilter).ToList();
+
+                return result;
             }
-
-            var masterFilter = Builders<T>.Filter.And(definitions);
-
-            var result = this.collection.Find(masterFilter).ToList();
-
-            return result;
+            catch (Exception e)
+            {
+                this.logger.Write(e.Source, e.Message);
+            }
+            
+            return null;      
         }
 
-        public bool Add(T item)
+        public bool Create(T item)
         {   
             bool success = false;
 

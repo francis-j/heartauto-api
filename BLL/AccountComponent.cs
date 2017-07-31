@@ -19,7 +19,7 @@ namespace BLL
             filters.Add(new KeyValuePair<string, object>("Email", account.Email));
             filters.Add(new KeyValuePair<string, object>("Password", account.Password));
             
-            var result = (this.repository).Get(filters).ToList().First();
+            var result = (this.repository).Read(filters).ToList().First();
 
             return result;
         }

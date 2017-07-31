@@ -7,9 +7,9 @@ namespace DAL
 {
     public interface IRepository<T>
     {
-        IEnumerable<T> Get();
-        IEnumerable<T> Get(List<KeyValuePair<string, object>> filters);
-        bool Add(T item);
+        IEnumerable<T> Read();
+        IEnumerable<T> Read(List<KeyValuePair<string, object>> filters);
+        bool Create(T item);
         bool Delete(ObjectId id);
         bool Update(ObjectId id, T item);
     }

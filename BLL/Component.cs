@@ -21,7 +21,7 @@ namespace BLL
             }
 
             if (performAdd)
-                repository.Add(item);
+                repository.Create(item);
         }
 
         public void Delete(ObjectId id)
@@ -32,14 +32,14 @@ namespace BLL
 
         public IEnumerable<T> Get()
         {
-            var list = repository.Get();
+            var list = repository.Read();
 
             return list;
         }
 
         public IEnumerable<T> Get(IEnumerable<KeyValuePair<string, object>> filters)
         {
-            var list = repository.Get(filters.ToList());
+            var list = repository.Read(filters.ToList());
 
             return list;
         }
