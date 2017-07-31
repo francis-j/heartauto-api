@@ -15,15 +15,13 @@ namespace BLL
 
         public new Site Add(Site item)
         {
-            bool performAdd = true;
             foreach (var i in Get().ToList())
             {
                 if (i.Title == item.Title)
-                    performAdd = false;
+                    throw new Exception("Site name already exists.");
             }
 
-            if (performAdd)
-                repository.Create(item);
+            return repository.Create(item);
         }
     }
 }

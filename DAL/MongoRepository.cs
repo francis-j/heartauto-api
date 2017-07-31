@@ -60,20 +60,21 @@ namespace DAL
             return null;      
         }
 
-        public bool Create(T item)
-        {   
-            bool success = false;
-
+        public T Create(T item)
+        {
             try 
             {
-                success = this.collection.InsertOneAsync(item).IsCompleted;
+                this.collection.InsertOneAsync(item);
+
+                logger.Write("Debug", item.ToJson());
+
             }
             catch (Exception e)
             {
                 logger.Write(e.Source, e.Message);
             }
 
-            return success;
+            return default(T);
         }
 
         public bool Delete(ObjectId id)

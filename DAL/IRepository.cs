@@ -9,7 +9,7 @@ namespace DAL
     {
         IEnumerable<T> Read();
         IEnumerable<T> Read(List<KeyValuePair<string, object>> filters);
-        bool Create(T item);
+        T Create(T item);
         bool Delete(ObjectId id);
         bool Update(ObjectId id, T item);
     }
