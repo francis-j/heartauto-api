@@ -23,77 +23,94 @@ namespace API.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<T> Get()
+        public virtual IActionResult Get()
         {
-            return component.Get();
+            try 
+            {
+                var result = component.Get();
+
+                return Ok(result);
+            }
+            catch (Exception e) 
+            {
+                logger.Write(e.Source, e.Message);
+                return BadRequest(e.Message);
+            }            
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IEnumerable<T> Get(string id)
+        public virtual IActionResult Get(string id)
 		{
-            var objectId = new ObjectId(id);
-
-            var filters = new List<KeyValuePair<string, object>>() 
+            try 
             {
-                new KeyValuePair<string, object>("_id", objectId)
-            };
+                var objectId = new ObjectId(id);
 
-            return component.Get(filters);
+                var filters = new List<KeyValuePair<string, object>>() 
+                {
+                    new KeyValuePair<string, object>("_id", objectId)
+                };
+
+                var result = component.Get(filters);
+
+                return Ok(result);
+            }
+            catch (Exception e) 
+            {
+                logger.Write(e.Source, e.Message);
+                return BadRequest(e.Message);
+            }      
         }
 
         // POST api/values
         [HttpPost]
-        public virtual bool Post([FromBody]T item)
+        public virtual IActionResult Post([FromBody]T item)
 		{
             try
             {
-                component.Add(item);
+                var result = component.Add(item);
+
+                return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception e) 
             {
-                Console.WriteLine(e.Message);
-
-                return false;
-            }
-
-            return true;
+                logger.Write(e.Source, e.Message);
+                return BadRequest(e.Message);
+            }      
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public bool Put(ObjectId id, [FromBody]T item)
+        public virtual IActionResult Put(ObjectId id, [FromBody]T item)
 		{
             try
             {
-                component.Update(id, item);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                
-                return false;
-            }
+                var result = component.Update(id, item);
 
-            return true;
+                return Ok(result);
+            }
+            catch (Exception e) 
+            {
+                logger.Write(e.Source, e.Message);
+                return BadRequest(e.Message);
+            }
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public bool Delete(ObjectId id)
+        public virtual IActionResult Delete(ObjectId id)
 		{
             try
             {
-                component.Delete(id);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+                var result = component.Delete(id);
                 
-                return false;
+                return Ok(result);
             }
-
-            return true;
+            catch (Exception e) 
+            {
+                logger.Write(e.Source, e.Message);
+                return BadRequest(e.Message);
+            }
         }
     }
 }

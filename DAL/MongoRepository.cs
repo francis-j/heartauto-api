@@ -27,14 +27,14 @@ namespace DAL
             this.collection = this.database.GetCollection<T>(typeof(T).Name);
         }
 
-        public IEnumerable<T> Read()
+        public virtual IEnumerable<T> Read()
         {
             var items = this.collection.Find(new BsonDocument()).ToList();
 
             return items;
         }
 
-        public IEnumerable<T> Read(List<KeyValuePair<string, object>> filters)
+        public virtual IEnumerable<T> Read(List<KeyValuePair<string, object>> filters)
         {
             try 
             {
@@ -60,14 +60,13 @@ namespace DAL
             return null;      
         }
 
-        public T Create(T item)
+        public virtual T Create(T item)
         {
             try 
             {
                 this.collection.InsertOneAsync(item);
-
-                logger.Write("Debug", item.ToJson());
-
+                
+                return item;
             }
             catch (Exception e)
             {
@@ -77,38 +76,34 @@ namespace DAL
             return default(T);
         }
 
-        public bool Delete(ObjectId id)
+        public virtual void Delete(ObjectId id)
         {
-            bool success = false;
-
             try 
             {
                 var filter = Builders<T>.Filter.Eq("_id", id);
-                success = this.collection.DeleteOneAsync(filter).IsCompleted;
+                this.collection.DeleteOneAsync(filter);
             }
             catch (Exception e)
             {
                 logger.Write(e.Source, e.Message);
+                throw new Exception(e.Message);
             }
-
-            return success;
         }
 
-        public bool Update(ObjectId id, T item)
+        public virtual T Update(ObjectId id, T item)
         {
-            bool success = false;
-
             try 
             {
                 var filter = Builders<T>.Filter.Eq("_id", id);
-                success = this.collection.FindOneAndReplaceAsync(filter, item).IsCompleted;
+                this.collection.FindOneAndReplaceAsync(filter, item);
+
+                return item;
             }
             catch (Exception e)
             {
                 logger.Write(e.Source, e.Message);
+                throw new Exception(e.Message);
             }
-
-            return success;
         }
     }
 }

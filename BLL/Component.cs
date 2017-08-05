@@ -11,40 +11,46 @@ namespace BLL
     {
         public IRepository<T> repository;
 
-        public void Add(T item)
+        public virtual T Add(T item)
         {
-            bool performAdd = true;
             foreach (var i in Get().ToList())
             {
                 if (i.Equals(item))
-                    performAdd = false;
+                    throw new Exception("Item already exists.");
             }
-
-            if (performAdd)
-                repository.Create(item);
+                
+            return repository.Create(item);
         }
 
-        public void Delete(ObjectId id)
+        public virtual bool Delete(ObjectId id)
         {
-            if (GetById(id) != null)
+            if (GetById(id) != null) 
+            {
                 repository.Delete(id);
+
+                return true;
+            }
+            else 
+            {
+                throw new Exception("Item does not exist.");
+            }
         }
 
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             var list = repository.Read();
 
             return list;
         }
 
-        public IEnumerable<T> Get(IEnumerable<KeyValuePair<string, object>> filters)
+        public virtual IEnumerable<T> Get(IEnumerable<KeyValuePair<string, object>> filters)
         {
             var list = repository.Read(filters.ToList());
 
             return list;
         }
 
-        public T GetById(ObjectId id)
+        public virtual T GetById(ObjectId id)
         {
             var filters = new List<KeyValuePair<string, object>>();
             filters.Add(new KeyValuePair<string, object>("_id", id));
@@ -60,10 +66,14 @@ namespace BLL
             return default(T);
         }
 
-        public void Update(ObjectId id, T item)
+        public virtual T Update(ObjectId id, T item)
         {
             if (GetById(id) != null)
-                repository.Update(id, item);
+                return repository.Update(id, item);
+            else
+                throw new Exception("Item does not exist.");
+
+            throw new Exception("An unspecified error occurred.");
         }
 
         #region IDisposable Support

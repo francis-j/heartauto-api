@@ -9,8 +9,8 @@ namespace BLL
         IEnumerable<T> Get();
         IEnumerable<T> Get(IEnumerable<KeyValuePair<string, object>> filters);
         T GetById(ObjectId id);
-        void Add (T item);
-        void Delete (ObjectId id);
-        void Update(ObjectId id, T item);
+        T Add (T item);
+        bool Delete (ObjectId id);
+        T Update(ObjectId id, T item);
     }
 }

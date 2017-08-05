@@ -32,7 +32,7 @@ namespace API
                 {
                     var result = (this.component as AccountComponent).Login(account);
 
-                    return Ok();
+                    return Ok(result);
                 }
                 catch (Exception e) 
                 {

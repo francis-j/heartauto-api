@@ -19,7 +19,7 @@ namespace API
     {
         public SiteController(IComponent<Site> component, IErrorLogger logger) : base(component, logger)
         {
-
+            
         }
     }
 }
