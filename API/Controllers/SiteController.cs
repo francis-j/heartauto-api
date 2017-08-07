@@ -21,5 +21,43 @@ namespace API
         {
             
         }
+
+        [HttpGet]
+        [Route("latest/{count}")]
+        public IActionResult Latest(int count) 
+        {
+            try 
+            {
+                var result = (this.component as SiteComponent).GetLatest(count);
+
+                return Ok(result);
+            }
+            catch (Exception e) 
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("my/{accountId}")]
+        public IActionResult My(string accountId) 
+        {
+            try 
+            {
+                var site = new Site();
+                var filters = new List<KeyValuePair<string, object>>() 
+                {
+                    new KeyValuePair<string, object>(nameof(site.AccountId), accountId)
+                };
+
+                var result = (this.component as SiteComponent).Get(filters);
+
+                return Ok(result);
+            }
+            catch (Exception e) 
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

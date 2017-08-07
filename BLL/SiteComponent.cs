@@ -58,5 +58,23 @@ namespace BLL
 
             throw new Exception("An unspecified error occurred.");
         }
+
+        public IEnumerable<Site> GetLatest(int count) 
+        {
+            var sites = this.Get().ToList();
+
+            if (sites.Count > 0)
+            {
+                sites.Sort((x, y) => x.DateCreated.CompareTo(y.DateCreated));
+
+                return sites.Where(x => sites.IndexOf(x) < count);
+            }
+            else 
+            {
+                throw new Exception("No sites found.");
+            }
+
+            throw new Exception("An unspecified error occurred.");
+        }
     }
 }
