@@ -65,9 +65,7 @@ namespace BLL
 
             if (sites.Count > 0)
             {
-                sites.Sort((x, y) => x.DateCreated.CompareTo(y.DateCreated));
-
-                return sites.Where(x => sites.IndexOf(x) < count);
+                return sites.OrderByDescending(x => x.DateCreated).Take(count);
             }
             else 
             {
