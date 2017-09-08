@@ -1,6 +1,0 @@
-C:\Users\Francis\Git\heartauto-api\BE\bin\Debug\netstandard1.5\BE.deps.json
-C:\Users\Francis\Git\heartauto-api\BE\bin\Debug\netstandard1.5\BE.dll
-C:\Users\Francis\Git\heartauto-api\BE\bin\Debug\netstandard1.5\BE.pdb
-C:\Users\Francis\Git\heartauto-api\BE\obj\Debug\netstandard1.5\BE.AssemblyInfo.cs
-C:\Users\Francis\Git\heartauto-api\BE\obj\Debug\netstandard1.5\BE.dll
-C:\Users\Francis\Git\heartauto-api\BE\obj\Debug\netstandard1.5\BE.pdb
