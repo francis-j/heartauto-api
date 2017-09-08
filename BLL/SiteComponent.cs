@@ -27,6 +27,7 @@ namespace BLL
                     throw new Exception("Site name already exists.");
             }
 
+            item.AccessKey = Utilities.GenerateGuid();
             item.DateCreated = item.DateUpdated = DateTime.UtcNow;
 
             foreach (var page in item.Pages) 

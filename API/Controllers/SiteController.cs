@@ -59,5 +59,27 @@ namespace API
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPost]
+        [Route("validateAccessKey")]
+        public IActionResult ValidateAccessKey([FromBody]string[] data) 
+        {
+            try 
+            {
+                var id = ObjectId.Parse(data[0]);
+                var key = data[1];
+
+                var site = this.component.GetById(id) as Site;
+                
+                if (Guid.Parse(key) == site.AccessKey)
+                    return Ok();
+                else
+                    throw new Exception("Access key incorrect");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

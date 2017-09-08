@@ -9,5 +9,6 @@ namespace BE
     {
         public string AccountId { get; set; }
         public IEnumerable<Page> Pages { get; set; }
+        public Guid AccessKey { get; set; }
     }
 }
