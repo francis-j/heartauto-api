@@ -81,11 +81,12 @@ namespace API.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public virtual IActionResult Put(ObjectId id, [FromBody]T item)
+        public virtual IActionResult Put(string id, [FromBody]T item)
 		{
             try
             {
-                var result = component.Update(id, item);
+                var objectId = new ObjectId(id);
+                var result = component.Update(objectId, item);
 
                 return Ok(result);
             }
@@ -98,11 +99,12 @@ namespace API.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public virtual IActionResult Delete(ObjectId id)
+        public virtual IActionResult Delete(string id)
 		{
             try
             {
-                var result = component.Delete(id);
+                var objectId = new ObjectId(id);
+                var result = component.Delete(objectId);
                 
                 return Ok(result);
             }
