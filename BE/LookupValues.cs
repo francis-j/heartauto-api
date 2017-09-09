@@ -4,7 +4,7 @@ namespace BE
 {
     public static class LookupValues
     {
-        public const string MONGODB_URL = "mongodb://localhost:27017";
-        public const string MONGODB_DATABASE_NAME = "Resume";
+        public static string MONGODB_CONNECTION_STRING;
+        public static string MONGODB_COLLECTION_NAME;
     }
 }

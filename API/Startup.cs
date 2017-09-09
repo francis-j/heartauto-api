@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using AspNet.Security.OpenIdConnect.Extensions;
-using AspNet.Security.OpenIdConnect.Primitives;
 using BLL;
 using BE.AccountEntities;
 using BE;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -47,14 +38,20 @@ namespace API
             services.AddTransient<IComponent<Account>, AccountComponent>();
             services.AddTransient<IRepository<Site>, SiteRepository>();
             services.AddTransient<IComponent<Site>, SiteComponent>();
+
+
+            LookupValues.MONGODB_CONNECTION_STRING = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "ConnectionString").FirstOrDefault().Value.ToString();
+            LookupValues.MONGODB_COLLECTION_NAME = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "CollectionName").FirstOrDefault().Value.ToString();
+            
+            var origins = Configuration.GetSection("CorsOrigins").GetChildren().Select(x => x.Value).ToArray();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder
-                        .WithOrigins("http://localhost:4200")
+                        .WithOrigins(origins)
                         .AllowAnyMethod()
                         .AllowAnyHeader());
-            });            
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

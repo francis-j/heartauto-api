@@ -20,9 +20,9 @@ namespace DAL
         {
             this.logger = logger;
 
-            var connectionString = LookupValues.MONGODB_URL;
+            var connectionString = LookupValues.MONGODB_CONNECTION_STRING;
             this.client = new MongoClient(connectionString);
-            this.database = this.client.GetDatabase(LookupValues.MONGODB_DATABASE_NAME);
+            this.database = this.client.GetDatabase(LookupValues.MONGODB_COLLECTION_NAME);
             
             this.collection = this.database.GetCollection<T>(typeof(T).Name);
         }
