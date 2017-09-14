@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETStandard,Version=v1.5": {
       "log4net/2.0.8": {
@@ -39,6 +39,50 @@
           "lib/netstandard1.3/log4net.dll": {}
         }
       },
+      "Microsoft.Azure.Search/3.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.7, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.6, 4.0.0)",
+          "Microsoft.Spatial": "7.2.0",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.0/Microsoft.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CSharp.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -55,6 +99,71 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.7": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure/3.3.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.7, 3.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.Spatial/7.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "resource": {
+          "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -205,6 +314,39 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
+        }
+      },
+      "Newtonsoft.Json/9.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -1687,10 +1829,10 @@
           "mongocsharpdriver": "2.4.4"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         }
       },
       "DAL/1.0.0": {
@@ -1703,10 +1845,10 @@
           "log4net": "2.0.8"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/DAL.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/DAL.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       }
     }
@@ -1734,6 +1876,78 @@
         "log4net.nuspec"
       ]
     },
+    "Microsoft.Azure.Search/3.0.4": {
+      "sha512": "AsjhMYLHqtwHEVSmQP8Z5gySDJNjJRkNMdpW6JkXxR54aDeAyLcFQSWUhcFg8PEzOzK5xNNRKwRlA6+xrx3DHQ==",
+      "type": "package",
+      "path": "microsoft.azure.search/3.0.4",
+      "files": [
+        "lib/net452/Microsoft.Azure.Search.dll",
+        "lib/net452/Microsoft.Azure.Search.runtimeconfig.json",
+        "lib/net452/Microsoft.Azure.Search.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Search.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Search.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Azure.Search.xml",
+        "microsoft.azure.search.3.0.4.nupkg.sha512",
+        "microsoft.azure.search.nuspec"
+      ]
+    },
+    "Microsoft.CSharp/4.0.1": {
+      "sha512": "ZPWyrtizafwfNS8SR6u8HlJgR3W8ZGBa8YU5z7BGaMi/cJDXsCJu/tJZ6eDeqJnqSuSDciBWp6/g8NwCGAIEgw==",
+      "type": "package",
+      "path": "microsoft.csharp/4.0.1",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.0.1.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "2qOQKuWZvuNgEXBeM8KMfVhdUCHu7QIjro0XfOq37YWFE65OjoWk4UYFIwfGbPB0v0+UmAApUJiDA+s3Au5n5g==",
       "type": "package",
@@ -1758,6 +1972,67 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime/2.3.7": {
+      "sha512": "17EPzwuVxh5R+Iz72JHSJ+TRJ3//QS66eNE1hpjiWp+POI3wAWYHk3qpxibgz3M6emC8yHVyG+W+ooiPIvZZ1g==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime/2.3.7",
+      "files": [
+        "lib/net452/Microsoft.Rest.ClientRuntime.dll",
+        "lib/net452/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
+        "lib/net452/Microsoft.Rest.ClientRuntime.xml",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.xml",
+        "microsoft.rest.clientruntime.2.3.7.nupkg.sha512",
+        "microsoft.rest.clientruntime.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime.Azure/3.3.6": {
+      "sha512": "ziRfTZ2LcNfLxVgAIJ1d9JUMvdGMoELXRkHfjbsE7MtJ8RF1PZ3/zivP8j/BRMZMK1qlnMzFuwjRg9aM8j2+Bw==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime.azure/3.3.6",
+      "files": [
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.xml",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.xml",
+        "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.nuspec"
+      ]
+    },
+    "Microsoft.Spatial/7.2.0": {
+      "sha512": "qLZ+g9Bfn87Ui9Jbb5loO+5jYCPGlTlV+JowSXXUQmkspSNPoWkbsmLpulbMbNpnTOiBEf/ishpz5GmYi6cSCA==",
+      "type": "package",
+      "path": "microsoft.spatial/7.2.0",
+      "files": [
+        "lib/netstandard1.1/Microsoft.Spatial.dll",
+        "lib/netstandard1.1/Microsoft.Spatial.xml",
+        "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/Microsoft.Spatial.dll",
+        "lib/portable-net45+win8+wpa81/Microsoft.Spatial.xml",
+        "lib/portable-net45+win8+wpa81/de/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/es/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/fr/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/it/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ja/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ko/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ru/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/zh-Hant/Microsoft.Spatial.resources.dll",
+        "microsoft.spatial.7.2.0.nupkg.sha512",
+        "microsoft.spatial.nuspec"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -1889,6 +2164,30 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/9.0.1": {
+      "sha512": "6pAHjO3whQSYYjH9f27NLApHmrrlPjKqIvSedaQllV+PKtvdvUVe48dT0BiQGrxVQ117KkVZ525Ae+N0cp+D/g==",
+      "type": "package",
+      "path": "newtonsoft.json/9.0.1",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -5956,6 +6255,7 @@
     ".NETStandard,Version=v1.5": [
       "BE >= 1.0.0",
       "DAL >= 1.0.0",
+      "Microsoft.Azure.Search >= 3.0.4",
       "NETStandard.Library >= 1.6.1"
     ]
   },
@@ -5964,26 +6264,35 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\Francis\\Git\\site-concept-api\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\BLL.csproj",
-      "outputPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\obj\\",
+      "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BLL\\BLL.csproj",
+      "packagesPath": "C:\\Users\\Francis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BLL\\obj\\",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Francis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
       "originalTargetFrameworks": [
         "netstandard1.5"
       ],
-      "files": {
-        "lib/netstandard1.5/BLL.dll": "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\bin\\placeholder\\netstandard1.5\\BLL.dll"
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard1.5": {
           "projectReferences": {
-            "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\DAL.csproj"
+            "C:\\Users\\Francis\\Git\\site-concept-api\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj": {
-              "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj"
+            "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj": {
+              "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj"
             }
           }
         }
@@ -5994,7 +6303,12 @@
         "dependencies": {
           "NETStandard.Library": {
             "target": "Package",
-            "version": "1.6.1"
+            "version": "1.6.1",
+            "autoReferenced": true
+          },
+          "Microsoft.Azure.Search": {
+            "target": "Package",
+            "version": "3.0.4"
           }
         }
       }

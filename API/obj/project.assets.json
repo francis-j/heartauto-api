@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "AspNet.Security.OpenIdConnect.Extensions/1.0.0": {
@@ -846,6 +846,23 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
+      "Microsoft.Azure.Search/3.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.7, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.6, 4.0.0)",
+          "Microsoft.Spatial": "7.2.0",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
         "type": "package"
       },
@@ -1573,6 +1590,71 @@
       },
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.7": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure/3.3.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.7, 3.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.Spatial/7.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "resource": {
+          "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
       },
       "Microsoft.VisualBasic/10.1.0": {
         "type": "package",
@@ -3912,10 +3994,10 @@
           "mongocsharpdriver": "2.4.4"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         }
       },
       "BLL/1.0.0": {
@@ -3924,13 +4006,14 @@
         "dependencies": {
           "BE": "1.0.0",
           "DAL": "1.0.0",
+          "Microsoft.Azure.Search": "3.0.4",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/BLL.dll": {}
+          "bin/placeholder/BLL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/BLL.dll": {}
+          "bin/placeholder/BLL.dll": {}
         }
       },
       "DAL/1.0.0": {
@@ -3943,10 +4026,10 @@
           "log4net": "2.0.8"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/DAL.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/DAL.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       }
     }
@@ -4599,6 +4682,21 @@
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
+    "Microsoft.Azure.Search/3.0.4": {
+      "sha512": "AsjhMYLHqtwHEVSmQP8Z5gySDJNjJRkNMdpW6JkXxR54aDeAyLcFQSWUhcFg8PEzOzK5xNNRKwRlA6+xrx3DHQ==",
+      "type": "package",
+      "path": "microsoft.azure.search/3.0.4",
+      "files": [
+        "lib/net452/Microsoft.Azure.Search.dll",
+        "lib/net452/Microsoft.Azure.Search.runtimeconfig.json",
+        "lib/net452/Microsoft.Azure.Search.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Search.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Search.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Azure.Search.xml",
+        "microsoft.azure.search.3.0.4.nupkg.sha512",
+        "microsoft.azure.search.nuspec"
+      ]
+    },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "sha512": "xDXWpz2p65xC+WGKVTo06M1fAO8k67kOLBannnFyjzrIWEc4UE8uPz8P+2SQpCqpL/Lmulg8+K2CAVUMtdWEsw==",
       "type": "package",
@@ -5249,6 +5347,67 @@
         "microsoft.netcore.windows.apisets.1.0.1.nupkg.sha512",
         "microsoft.netcore.windows.apisets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime/2.3.7": {
+      "sha512": "17EPzwuVxh5R+Iz72JHSJ+TRJ3//QS66eNE1hpjiWp+POI3wAWYHk3qpxibgz3M6emC8yHVyG+W+ooiPIvZZ1g==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime/2.3.7",
+      "files": [
+        "lib/net452/Microsoft.Rest.ClientRuntime.dll",
+        "lib/net452/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
+        "lib/net452/Microsoft.Rest.ClientRuntime.xml",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.xml",
+        "microsoft.rest.clientruntime.2.3.7.nupkg.sha512",
+        "microsoft.rest.clientruntime.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime.Azure/3.3.6": {
+      "sha512": "ziRfTZ2LcNfLxVgAIJ1d9JUMvdGMoELXRkHfjbsE7MtJ8RF1PZ3/zivP8j/BRMZMK1qlnMzFuwjRg9aM8j2+Bw==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime.azure/3.3.6",
+      "files": [
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.xml",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.xml",
+        "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.nuspec"
+      ]
+    },
+    "Microsoft.Spatial/7.2.0": {
+      "sha512": "qLZ+g9Bfn87Ui9Jbb5loO+5jYCPGlTlV+JowSXXUQmkspSNPoWkbsmLpulbMbNpnTOiBEf/ishpz5GmYi6cSCA==",
+      "type": "package",
+      "path": "microsoft.spatial/7.2.0",
+      "files": [
+        "lib/netstandard1.1/Microsoft.Spatial.dll",
+        "lib/netstandard1.1/Microsoft.Spatial.xml",
+        "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/Microsoft.Spatial.dll",
+        "lib/portable-net45+win8+wpa81/Microsoft.Spatial.xml",
+        "lib/portable-net45+win8+wpa81/de/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/es/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/fr/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/it/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ja/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ko/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/ru/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/portable-net45+win8+wpa81/zh-Hant/Microsoft.Spatial.resources.dll",
+        "microsoft.spatial.7.2.0.nupkg.sha512",
+        "microsoft.spatial.nuspec"
       ]
     },
     "Microsoft.VisualBasic/10.1.0": {
@@ -10347,26 +10506,35 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Francis\\Git\\heartauto-api\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Francis\\Git\\site-concept-api\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\API\\API.csproj",
-      "outputPath": "C:\\Users\\Francis\\Git\\heartauto-api\\API\\obj\\",
+      "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Francis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Francis\\Git\\site-concept-api\\API\\obj\\",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Francis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
-      "files": {
-        "lib/netcoreapp1.1/API.dll": "C:\\Users\\Francis\\Git\\heartauto-api\\API\\bin\\placeholder\\netcoreapp1.1\\API.dll"
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj": {
-              "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj"
+            "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj": {
+              "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj"
             },
-            "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BLL\\BLL.csproj"
+            "C:\\Users\\Francis\\Git\\site-concept-api\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BLL\\BLL.csproj"
             }
           }
         }
@@ -10375,35 +10543,36 @@
     "frameworks": {
       "netcoreapp1.1": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "1.1.2"
-          },
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "1.1.2"
           },
-          "Microsoft.AspNetCore.Mvc": {
+          "Microsoft.AspNetCore.Authentication.Cookies": {
             "target": "Package",
-            "version": "1.1.3"
+            "version": "1.1.2"
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "1.1.2"
           },
-          "Microsoft.AspNetCore.Authentication": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "1.1.2"
+            "version": "1.1.2",
+            "autoReferenced": true
           },
           "AspNet.Security.OpenIdConnect.Server": {
             "target": "Package",
             "version": "1.0.0"
           },
+          "Microsoft.AspNetCore.Mvc": {
+            "target": "Package",
+            "version": "1.1.3"
+          },
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": {
             "target": "Package",
             "version": "14.1.0"
           },
-          "Microsoft.AspNetCore.Authentication.Cookies": {
+          "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
             "version": "1.1.2"
           },

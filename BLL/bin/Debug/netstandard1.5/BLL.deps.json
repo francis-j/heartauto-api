@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v1.5/",
-    "signature": "fea6372528c7a72681a41bd5b72712222e3b77e3"
+    "signature": "2deb40736372d4463e0d7fc98cde81ab06624a27"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "BE": "1.0.0",
           "DAL": "1.0.0",
+          "Microsoft.Azure.Search": "3.0.4",
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
@@ -50,8 +51,97 @@
           "lib/netstandard1.3/log4net.dll": {}
         }
       },
+      "microsoft.azure.search/3.0.4": {
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.7",
+          "Microsoft.Rest.ClientRuntime.Azure": "3.3.6",
+          "Microsoft.Spatial": "7.2.0",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        }
+      },
+      "microsoft.csharp/4.0.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CSharp.dll": {}
+        }
+      },
       "microsoft.netcore.platforms/1.1.0": {},
       "microsoft.netcore.targets/1.1.0": {},
+      "microsoft.rest.clientruntime/2.3.7": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "microsoft.rest.clientruntime.azure/3.3.6": {
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.7",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "microsoft.spatial/7.2.0": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "resources": {
+          "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "microsoft.win32.primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -165,6 +255,35 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
+        }
+      },
+      "newtonsoft.json/9.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.XDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0": {},
@@ -1129,6 +1248,20 @@
       "path": "log4net/2.0.8",
       "hashPath": "log4net.2.0.8.nupkg.sha512"
     },
+    "microsoft.azure.search/3.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AsjhMYLHqtwHEVSmQP8Z5gySDJNjJRkNMdpW6JkXxR54aDeAyLcFQSWUhcFg8PEzOzK5xNNRKwRlA6+xrx3DHQ==",
+      "path": "microsoft.azure.search/3.0.4",
+      "hashPath": "microsoft.azure.search.3.0.4.nupkg.sha512"
+    },
+    "microsoft.csharp/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZPWyrtizafwfNS8SR6u8HlJgR3W8ZGBa8YU5z7BGaMi/cJDXsCJu/tJZ6eDeqJnqSuSDciBWp6/g8NwCGAIEgw==",
+      "path": "microsoft.csharp/4.0.1",
+      "hashPath": "microsoft.csharp.4.0.1.nupkg.sha512"
+    },
     "microsoft.netcore.platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1142,6 +1275,27 @@
       "sha512": "sha512-k+TrO7LjHbvl/q9/69fFNMoBibLmrJ8WLApc8yw6zBHkk0FYibL8AGEKVLWbHQ+d8ijHzlva4zwXbV7qH/gdvQ==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "microsoft.rest.clientruntime/2.3.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-17EPzwuVxh5R+Iz72JHSJ+TRJ3//QS66eNE1hpjiWp+POI3wAWYHk3qpxibgz3M6emC8yHVyG+W+ooiPIvZZ1g==",
+      "path": "microsoft.rest.clientruntime/2.3.7",
+      "hashPath": "microsoft.rest.clientruntime.2.3.7.nupkg.sha512"
+    },
+    "microsoft.rest.clientruntime.azure/3.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziRfTZ2LcNfLxVgAIJ1d9JUMvdGMoELXRkHfjbsE7MtJ8RF1PZ3/zivP8j/BRMZMK1qlnMzFuwjRg9aM8j2+Bw==",
+      "path": "microsoft.rest.clientruntime.azure/3.3.6",
+      "hashPath": "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512"
+    },
+    "microsoft.spatial/7.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qLZ+g9Bfn87Ui9Jbb5loO+5jYCPGlTlV+JowSXXUQmkspSNPoWkbsmLpulbMbNpnTOiBEf/ishpz5GmYi6cSCA==",
+      "path": "microsoft.spatial/7.2.0",
+      "hashPath": "microsoft.spatial.7.2.0.nupkg.sha512"
     },
     "microsoft.win32.primitives/4.3.0": {
       "type": "package",
@@ -1191,6 +1345,13 @@
       "sha512": "sha512-RDdw38bk+4sU6ZE4zVbMixtQ9iYjdSf0PRf26GoROT4QL09pNQEvdE7jDG8kUrYpyXIErAWTZ2ptXVKsVtVm4Q==",
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
+    },
+    "newtonsoft.json/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6pAHjO3whQSYYjH9f27NLApHmrrlPjKqIvSedaQllV+PKtvdvUVe48dT0BiQGrxVQ117KkVZ525Ae+N0cp+D/g==",
+      "path": "newtonsoft.json/9.0.1",
+      "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0": {
       "type": "package",

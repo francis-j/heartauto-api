@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETStandard,Version=v1.5": {
       "log4net/2.0.8": {
@@ -1687,10 +1687,10 @@
           "mongocsharpdriver": "2.4.4"
         },
         "compile": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         },
         "runtime": {
-          "bin/placeholder/netstandard1.5/BE.dll": {}
+          "bin/placeholder/BE.dll": {}
         }
       }
     }
@@ -5944,23 +5944,32 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Francis\\Git\\site-concept-api\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\DAL.csproj",
-      "outputPath": "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Francis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Francis\\Git\\site-concept-api\\DAL\\obj\\",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Francis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
       "originalTargetFrameworks": [
         "netstandard1.5"
       ],
-      "files": {
-        "lib/netstandard1.5/DAL.dll": "C:\\Users\\Francis\\Git\\heartauto-api\\DAL\\bin\\placeholder\\netstandard1.5\\DAL.dll"
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard1.5": {
           "projectReferences": {
-            "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj": {
-              "projectPath": "C:\\Users\\Francis\\Git\\heartauto-api\\BE\\BE.csproj"
+            "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj": {
+              "projectPath": "C:\\Users\\Francis\\Git\\site-concept-api\\BE\\BE.csproj"
             }
           }
         }
@@ -5969,17 +5978,18 @@
     "frameworks": {
       "netstandard1.5": {
         "dependencies": {
+          "MongoDB.Driver": {
+            "target": "Package",
+            "version": "2.4.4"
+          },
           "NETStandard.Library": {
             "target": "Package",
-            "version": "1.6.1"
+            "version": "1.6.1",
+            "autoReferenced": true
           },
           "log4net": {
             "target": "Package",
             "version": "2.0.8"
-          },
-          "MongoDB.Driver": {
-            "target": "Package",
-            "version": "2.4.4"
           }
         }
       }

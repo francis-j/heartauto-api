@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "993a51dd4c00bef033002a17b546fbfe3df4cb72"
+    "signature": "8dc34b4fd31b51ab082356d44568b9f67b5fa563"
   },
   "compilationOptions": {
     "defines": [
@@ -798,6 +798,22 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
+      "microsoft.azure.search/3.0.4": {
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.7",
+          "Microsoft.Rest.ClientRuntime.Azure": "3.3.6",
+          "Microsoft.Spatial": "7.2.0",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.2"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Search.dll": {}
+        }
+      },
       "microsoft.dotnet.platformabstractions/1.1.2": {
         "dependencies": {
           "System.AppContext": "4.3.0",
@@ -1255,6 +1271,68 @@
           "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "microsoft.rest.clientruntime/2.3.7": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "microsoft.rest.clientruntime.azure/3.3.6": {
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.7",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "microsoft.spatial/7.2.0": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        },
+        "resources": {
+          "lib/netstandard1.1/de/Microsoft.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {}
+        }
+      },
       "microsoft.visualstudio.web.browserlink.loader/14.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "1.1.2",
@@ -1610,6 +1688,7 @@
         "dependencies": {
           "BE": "1.0.0",
           "DAL": "1.0.0",
+          "Microsoft.Azure.Search": "3.0.4",
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
@@ -3653,6 +3732,13 @@
       "path": "microsoft.aspnetcore.webutilities/1.1.2",
       "hashPath": "microsoft.aspnetcore.webutilities.1.1.2.nupkg.sha512"
     },
+    "microsoft.azure.search/3.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AsjhMYLHqtwHEVSmQP8Z5gySDJNjJRkNMdpW6JkXxR54aDeAyLcFQSWUhcFg8PEzOzK5xNNRKwRlA6+xrx3DHQ==",
+      "path": "microsoft.azure.search/3.0.4",
+      "hashPath": "microsoft.azure.search.3.0.4.nupkg.sha512"
+    },
     "microsoft.dotnet.platformabstractions/1.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3890,6 +3976,27 @@
       "sha512": "sha512-WtVP26shsNyKy8Nm/XTFeXwJvDx86aAq/dfJXDtsmEtlqeV3F30Mk6nJ/M2Ph8bQjAM6gvtcZjUACfYNJZunGw==",
       "path": "microsoft.net.http.headers/1.1.2",
       "hashPath": "microsoft.net.http.headers.1.1.2.nupkg.sha512"
+    },
+    "microsoft.rest.clientruntime/2.3.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-17EPzwuVxh5R+Iz72JHSJ+TRJ3//QS66eNE1hpjiWp+POI3wAWYHk3qpxibgz3M6emC8yHVyG+W+ooiPIvZZ1g==",
+      "path": "microsoft.rest.clientruntime/2.3.7",
+      "hashPath": "microsoft.rest.clientruntime.2.3.7.nupkg.sha512"
+    },
+    "microsoft.rest.clientruntime.azure/3.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziRfTZ2LcNfLxVgAIJ1d9JUMvdGMoELXRkHfjbsE7MtJ8RF1PZ3/zivP8j/BRMZMK1qlnMzFuwjRg9aM8j2+Bw==",
+      "path": "microsoft.rest.clientruntime.azure/3.3.6",
+      "hashPath": "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512"
+    },
+    "microsoft.spatial/7.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qLZ+g9Bfn87Ui9Jbb5loO+5jYCPGlTlV+JowSXXUQmkspSNPoWkbsmLpulbMbNpnTOiBEf/ishpz5GmYi6cSCA==",
+      "path": "microsoft.spatial/7.2.0",
+      "hashPath": "microsoft.spatial.7.2.0.nupkg.sha512"
     },
     "microsoft.visualstudio.web.browserlink.loader/14.1.0": {
       "type": "package",
