@@ -29,6 +29,10 @@ namespace API
             try 
             {
                 var result = (this.component as SiteComponent).GetLatest(count);
+                foreach (var site in result) 
+                {
+                    site.AccessKey = Guid.Empty;
+                }
 
                 return Ok(result);
             }
