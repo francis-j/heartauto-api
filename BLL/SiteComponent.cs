@@ -38,7 +38,7 @@ namespace BLL
             return repository.Create(item);
         }
 
-        public new Site Update(ObjectId id, Site item)
+        public override Site Update(ObjectId id, Site item)
         {
             if (GetById(id) != null) 
             {
