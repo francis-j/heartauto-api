@@ -24,9 +24,17 @@ namespace API
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+            LoadConfiguration();
         }
 
         public IConfigurationRoot Configuration { get; }
+
+        private void LoadConfiguration() 
+        {
+            LookupValues.MONGODB_CONNECTION_STRING = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "ConnectionString").FirstOrDefault().Value.ToString();
+            LookupValues.MONGODB_COLLECTION_NAME = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "CollectionName").FirstOrDefault().Value.ToString();
+            LookupValues.PURGE_HASH = Configuration.GetValue<string>("PurgeSecureHash");
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -38,10 +46,6 @@ namespace API
             services.AddTransient<IComponent<Account>, AccountComponent>();
             services.AddTransient<IRepository<Site>, SiteRepository>();
             services.AddTransient<IComponent<Site>, SiteComponent>();
-
-
-            LookupValues.MONGODB_CONNECTION_STRING = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "ConnectionString").FirstOrDefault().Value.ToString();
-            LookupValues.MONGODB_COLLECTION_NAME = Configuration.GetSection("MongoDb").GetChildren().Where(x => x.Key == "CollectionName").FirstOrDefault().Value.ToString();
             
             var origins = Configuration.GetSection("CorsOrigins").GetChildren().Select(x => x.Value).ToArray();
             services.AddCors(options =>
