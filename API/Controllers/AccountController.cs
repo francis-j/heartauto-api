@@ -31,6 +31,7 @@ namespace API
                 try 
                 {
                     var result = (this.component as AccountComponent).Login(account);
+                    result.Password = string.Empty;
 
                     return Ok(result);
                 }
