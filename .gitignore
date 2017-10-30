@@ -1,16 +1,31 @@
 #Folders
-API/Properties
-API/bin/
-API/obj/
-BE/bin/
-BE/obj/
-BLL/bin/
-BLL/obj/
-DAL/bin/
-DAL/obj/
-XUT/bin/
-XUT/obj/
-.vs/
+!API/
+API/Properties/*
+API/obj/*
+BE/bin/*
+BE/obj/*
+BLL/bin/*
+BLL/obj/*
+DAL/bin/*
+DAL/obj/*
+XUT/bin/*
+XUT/obj/*
+.vs/*
 
 #Specific files
 API/API.csproj.user
+
+#Include Dockerfile
+!API/bin/
+
+API/bin/*
+!API/bin/Release/
+
+API/bin/Release/*
+!API/bin/Release/netcoreapp1.1/
+
+API/bin/Release/netcoreapp1.1/*
+!API/bin/Release/netcoreapp1.1/publish/
+
+API/bin/Release/netcoreapp1.1/publish/*
+!API/bin/Release/netcoreapp1.1/publish/Dockerfile
